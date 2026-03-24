@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Nazmus Sakib | Accounting & Bookkeeping Professional</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+  :root {
+    --navy: #080e20;
+    --navy2: #0d1630;
+    --navy3: #111d3c;
+    --gold: #c9a04a;
+    --gold2: #e2b96a;
+    --gold-light: #f0d898;
+    --white: #f5f0e8;
+    --muted: #8a96b0;
+    --card: #0f1a38;
+    --border: rgba(201,160,74,0.18);
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 999;
+    background: rgba(8,14,32,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 68px;
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem; font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.04em;
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none; font-size: 0.85rem;
+    font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+    transition: color 0.25s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    background: var(--gold); color: var(--navy);
+    padding: 0.5rem 1.3rem; border-radius: 4px;
+    font-size: 0.82rem; font-weight: 600;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    text-decoration: none; transition: background 0.25s;
+  }
+  .nav-cta:hover { background: var(--gold2); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 100px 5% 60px;
+    position: relative; overflow: hidden;
+  }
+  .hero-grid-bg {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(201,160,74,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,160,74,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+  .hero-glow {
+    position: absolute; top: -200px; right: -200px;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(201,160,74,0.10) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 1100px; margin: 0 auto; width: 100%;
+    display: grid; grid-template-columns: 1fr 380px; gap: 4rem; align-items: center;
+    position: relative;
+  }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(201,160,74,0.1); border: 1px solid var(--border);
+    border-radius: 40px; padding: 0.3rem 0.9rem;
+    font-size: 0.78rem; color: var(--gold); letter-spacing: 0.08em;
+    text-transform: uppercase; font-weight: 500; margin-bottom: 1.4rem;
+  }
+  .hero-tag i { font-size: 0.65rem; }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    font-weight: 700; line-height: 1.12;
+    color: var(--white); margin-bottom: 0.3rem;
+  }
+  .hero h1 em { color: var(--gold); font-style: italic; }
+  .hero-subtitle {
+    font-size: 1.05rem; color: var(--muted);
+    max-width: 540px; margin-bottom: 2rem; font-weight: 300;
+  }
+  .hero-stats {
+    display: flex; gap: 2.5rem; margin-bottom: 2.5rem;
+    border-top: 1px solid var(--border); padding-top: 2rem;
+  }
+  .stat-item {}
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem; font-weight: 700; color: var(--gold);
+    display: block;
+  }
+  .stat-label { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--gold); color: var(--navy);
+    padding: 0.85rem 2rem; border-radius: 4px;
+    font-weight: 600; font-size: 0.9rem; letter-spacing: 0.04em;
+    text-decoration: none; transition: background 0.25s, transform 0.2s;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+  }
+  .btn-primary:hover { background: var(--gold2); transform: translateY(-1px); }
+  .btn-outline {
+    border: 1px solid var(--border); color: var(--white);
+    padding: 0.85rem 2rem; border-radius: 4px;
+    font-weight: 500; font-size: 0.9rem;
+    text-decoration: none; transition: border-color 0.25s, color 0.25s;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* HERO CARD */
+  .hero-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px; padding: 2rem;
+    animation: floatCard 5s ease-in-out infinite;
+  }
+  @keyframes floatCard {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  .hero-card-avatar {
+    width: 70px; height: 70px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), var(--navy3));
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem; font-weight: 700; color: var(--navy);
+    margin-bottom: 1rem;
+  }
+  .hero-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; color: var(--white); margin-bottom: 0.2rem;
+  }
+  .hero-card p { font-size: 0.82rem; color: var(--gold); margin-bottom: 1rem; }
+  .hero-card-stats {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem;
+  }
+  .hcs {
+    background: rgba(201,160,74,0.07);
+    border: 1px solid var(--border); border-radius: 8px;
+    padding: 0.7rem; text-align: center;
+  }
+  .hcs-num { font-size: 1.2rem; font-weight: 700; color: var(--gold); display: block; }
+  .hcs-label { font-size: 0.7rem; color: var(--muted); }
+  .availability-badge {
+    display: flex; align-items: center; gap: 0.5rem;
+    margin-top: 1rem; padding: 0.5rem 0.8rem;
+    background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.2);
+    border-radius: 6px; font-size: 0.8rem; color: #4ade80;
+  }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: #4ade80;
+    animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.4} }
+
+  /* ── SECTION WRAPPER ── */
+  section { padding: 90px 5%; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-tag {
+    font-size: 0.75rem; color: var(--gold); letter-spacing: 0.14em;
+    text-transform: uppercase; font-weight: 600; margin-bottom: 0.6rem;
+    display: flex; align-items: center; gap: 0.6rem;
+  }
+  .section-tag::before { content:''; display:block; width:24px; height:1px; background:var(--gold); }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.9rem, 3.5vw, 2.7rem);
+    font-weight: 700; color: var(--white);
+    line-height: 1.2; margin-bottom: 1rem;
+  }
+  .section-subtitle { color: var(--muted); max-width: 580px; font-size: 0.97rem; margin-bottom: 3rem; }
+
+  /* ── SERVICES ── */
+  #services { background: var(--navy2); }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  .service-card {
+    background: var(--navy);
+    border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.8rem;
+    transition: border-color 0.3s, transform 0.3s;
+    position: relative; overflow: hidden;
+  }
+  .service-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .service-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+  .service-card:hover::before { opacity: 1; }
+  .service-icon {
+    width: 48px; height: 48px; border-radius: 10px;
+    background: rgba(201,160,74,0.1); border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.1rem; font-size: 1.1rem; color: var(--gold);
+  }
+  .service-card h3 { font-size: 1rem; font-weight: 600; color: var(--white); margin-bottom: 0.5rem; }
+  .service-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+  /* ── PROJECTS ── */
+  .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .project-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px; padding: 2rem;
+    transition: border-color 0.3s;
+  }
+  .project-card:hover { border-color: var(--gold); }
+  .project-card.featured { grid-column: 1/-1; }
+  .project-meta {
+    display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1rem;
+  }
+  .tag {
+    background: rgba(201,160,74,0.1); border: 1px solid var(--border);
+    border-radius: 20px; padding: 0.2rem 0.7rem;
+    font-size: 0.72rem; color: var(--gold); letter-spacing: 0.04em;
+  }
+  .project-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem; color: var(--white); margin-bottom: 0.6rem;
+  }
+  .project-card p { font-size: 0.86rem; color: var(--muted); margin-bottom: 1.2rem; }
+  .project-results {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+    border-top: 1px solid var(--border); padding-top: 1.2rem;
+  }
+  .pr-item {}
+  .pr-num { font-size: 1.3rem; font-weight: 700; color: var(--gold); display: block; }
+  .pr-label { font-size: 0.72rem; color: var(--muted); }
+
+  /* ── TOOLS ── */
+  #tools { background: var(--navy2); }
+  .tools-grid {
+    display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 2rem;
+  }
+  .tool-badge {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 8px; padding: 0.55rem 1rem;
+    font-size: 0.85rem; color: var(--muted);
+    display: flex; align-items: center; gap: 0.5rem;
+    transition: border-color 0.25s, color 0.25s;
+  }
+  .tool-badge:hover { border-color: var(--gold); color: var(--gold); }
+  .tool-badge i { color: var(--gold); font-size: 0.75rem; }
+
+  /* ── TESTIMONIALS ── */
+  .reviews-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+  .review-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 14px; padding: 1.8rem;
+    transition: border-color 0.3s;
+  }
+  .review-card:hover { border-color: var(--gold); }
+  .stars { color: var(--gold); font-size: 0.85rem; margin-bottom: 1rem; letter-spacing: 0.1em; }
+  .review-text {
+    font-size: 0.9rem; color: var(--muted); line-height: 1.7;
+    margin-bottom: 1.3rem; font-style: italic;
+  }
+  .review-author { display: flex; align-items: center; gap: 0.8rem; }
+  .review-avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), var(--navy3));
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.85rem; color: var(--navy);
+  }
+  .ra-name { font-weight: 600; font-size: 0.88rem; color: var(--white); }
+  .ra-title { font-size: 0.75rem; color: var(--muted); }
+
+  /* ── EXPERIENCE ── */
+  #experience { background: var(--navy2); }
+  .timeline { position: relative; padding-left: 2.5rem; }
+  .timeline::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 1px; background: var(--border);
+  }
+  .timeline-item {
+    position: relative; margin-bottom: 2.5rem;
+  }
+  .timeline-item::before {
+    content: ''; position: absolute; left: -2.5rem; top: 6px;
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--gold); border: 2px solid var(--navy2);
+    box-shadow: 0 0 0 3px rgba(201,160,74,0.2);
+  }
+  .tl-period {
+    font-size: 0.75rem; color: var(--gold); letter-spacing: 0.06em;
+    text-transform: uppercase; margin-bottom: 0.3rem;
+  }
+  .tl-title { font-size: 1.05rem; font-weight: 600; color: var(--white); margin-bottom: 0.2rem; }
+  .tl-org { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.8rem; }
+  .tl-desc { font-size: 0.87rem; color: var(--muted); line-height: 1.65; }
+  .tl-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.8rem; }
+
+  /* ── CERTIFICATIONS ── */
+  .certs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 0; }
+  .cert-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.5rem;
+    display: flex; gap: 1rem; align-items: flex-start;
+    transition: border-color 0.25s;
+  }
+  .cert-card:hover { border-color: var(--gold); }
+  .cert-icon { font-size: 1.6rem; color: var(--gold); flex-shrink: 0; margin-top: 2px; }
+  .cert-title { font-weight: 600; font-size: 0.95rem; color: var(--white); margin-bottom: 0.2rem; }
+  .cert-org { font-size: 0.8rem; color: var(--muted); }
+  .cert-date { font-size: 0.75rem; color: var(--gold); margin-top: 0.3rem; letter-spacing: 0.04em; }
+
+  /* ── INDUSTRIES ── */
+  #industries { background: var(--navy2); }
+  .industries-wrap {
+    display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;
+  }
+  .industry-item {
+    background: var(--navy); border: 1px solid var(--border);
+    border-radius: 10px; padding: 0.8rem 1.2rem;
+    display: flex; align-items: center; gap: 0.6rem;
+    font-size: 0.87rem; color: var(--muted);
+    transition: all 0.25s;
+  }
+  .industry-item:hover { border-color: var(--gold); color: var(--white); }
+  .industry-item i { color: var(--gold); font-size: 0.85rem; }
+
+  /* ── CONTACT ── */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+  .contact-info { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+  .ci-item {
+    display: flex; align-items: center; gap: 1rem;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 1rem 1.3rem;
+    text-decoration: none; transition: border-color 0.25s;
+  }
+  .ci-item:hover { border-color: var(--gold); }
+  .ci-icon { width: 38px; height: 38px; border-radius: 8px;
+    background: rgba(201,160,74,0.1); display: flex; align-items: center;
+    justify-content: center; color: var(--gold); font-size: 0.9rem; flex-shrink: 0; }
+  .ci-label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+  .ci-value { font-size: 0.9rem; color: var(--white); font-weight: 500; }
+  .contact-note {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 14px; padding: 2rem;
+  }
+  .contact-note h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; color: var(--white); margin-bottom: 0.8rem;
+  }
+  .contact-note p { font-size: 0.88rem; color: var(--muted); margin-bottom: 1.5rem; line-height: 1.7; }
+  .upwork-btn {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    background: #6fda44; color: #1a1a1a;
+    padding: 0.85rem 1.8rem; border-radius: 6px;
+    font-weight: 700; font-size: 0.88rem; letter-spacing: 0.03em;
+    text-decoration: none; transition: opacity 0.25s;
+  }
+  .upwork-btn:hover { opacity: 0.9; }
+  .email-btn {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    background: transparent; border: 1px solid var(--gold); color: var(--gold);
+    padding: 0.85rem 1.8rem; border-radius: 6px;
+    font-weight: 600; font-size: 0.88rem;
+    text-decoration: none; transition: background 0.25s; margin-left: 0.8rem;
+  }
+  .email-btn:hover { background: rgba(201,160,74,0.1); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy2); border-top: 1px solid var(--border);
+    padding: 2rem 5%; text-align: center;
+  }
+  footer p { font-size: 0.8rem; color: var(--muted); }
+  footer span { color: var(--gold); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-card { display: none; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .project-card.featured { grid-column: auto; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .certs-grid { grid-template-columns: 1fr; }
+    nav { padding: 0 4%; }
+    .nav-links { display: none; }
+  }
+
+  /* fade-in on load */
+  .fade-in { opacity: 0; transform: translateY(24px);
+    animation: fadeUp 0.7s ease forwards; }
+  .delay-1 { animation-delay: 0.15s; }
+  .delay-2 { animation-delay: 0.3s; }
+  .delay-3 { animation-delay: 0.45s; }
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Nazmus Sakib</a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="https://www.upwork.com/freelancers/~012aebfac2c912d4a7" target="_blank" class="nav-cta">Hire on Upwork</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag fade-in"><i class="fas fa-certificate"></i> QuickBooks ProAdvisor · ICMAB Professional</div>
+      <h1 class="fade-in delay-1">Precision Books.<br><em>Clear Insights.</em><br>Zero Errors.</h1>
+      <p class="hero-subtitle fade-in delay-2">MBA-qualified accountant with 5+ years of hands-on bookkeeping, tax compliance, and financial reporting. Serving businesses across the US, UK, Canada, and Australia.</p>
+      <div class="hero-stats fade-in delay-2">
+        <div class="stat-item">
+          <span class="stat-num">500+</span>
+          <span class="stat-label">Tax Returns Filed</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">5+</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Accuracy Rate</span>
+        </div>
+      </div>
+      <div class="hero-actions fade-in delay-3">
+        <a href="#contact" class="btn-primary"><i class="fas fa-briefcase"></i> Start a Project</a>
+        <a href="#projects" class="btn-outline"><i class="fas fa-folder-open"></i> View Work</a>
+      </div>
+    </div>
+
+    <div class="hero-card fade-in delay-2">
+      <div class="hero-card-avatar">NS</div>
+      <h3>Nazmus Sakib</h3>
+      <p>Certified QuickBooks ProAdvisor · MBA</p>
+      <div class="hero-card-stats">
+        <div class="hcs"><span class="hcs-num">$12</span><span class="hcs-label">Per Hour</span></div>
+        <div class="hcs"><span class="hcs-num">30+</span><span class="hcs-label">Hrs/Week</span></div>
+        <div class="hcs"><span class="hcs-num">5</span><span class="hcs-label">Days Delivery</span></div>
+        <div class="hcs"><span class="hcs-num">12+</span><span class="hcs-label">Mo Avg Engagement</span></div>
+      </div>
+      <div class="availability-badge"><div class="dot"></div> Available for New Projects</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="section-tag">What's on offer</div>
+    <h2 class="section-title">Full-Spectrum Accounting Services</h2>
+    <p class="section-subtitle">From daily transaction management to CPA-ready financial statements, every service is built for accuracy, speed, and clarity.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-book"></i></div>
+        <h3>Monthly Bookkeeping</h3>
+        <p>Transaction categorization, ledger maintenance, and reconciliation delivered within 5 business days every month.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fab fa-squarespace"></i></div>
+        <h3>QuickBooks Setup & Cleanup</h3>
+        <p>Custom Chart of Accounts, migration from Wave/Xero/FreshBooks, and correction of miscategorized entries and duplicates.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-university"></i></div>
+        <h3>Bank & Card Reconciliation</h3>
+        <p>Bank, credit card, and loan account reconciliation with full documentation and discrepancy flags.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+        <h3>Tax Preparation Support</h3>
+        <p>CPA-ready books, 1099 processing, e-Return submission, and BD income tax compliance under the Income Tax Ordinance 1984.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+        <h3>Financial Reporting</h3>
+        <p>Profit & Loss, Balance Sheet, Cash Flow Statement, and Variance Analysis, designed to be readable by business owners, not just accountants.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-undo-alt"></i></div>
+        <h3>Catch-Up Bookkeeping</h3>
+        <p>Months or years of backlog cleaned up accurately. Ideal for businesses preparing for audit, funding, or tax season.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-users"></i></div>
+        <h3>Payroll Processing</h3>
+        <p>Full payroll compliance via Gusto, ADP, and QBO Payroll, including reconciliation and payroll reporting.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-shopping-cart"></i></div>
+        <h3>E-Commerce Integration</h3>
+        <p>Shopify, Stripe, PayPal, Amazon, and WooCommerce synced cleanly into QuickBooks with COGS and inventory tracking.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-hard-hat"></i></div>
+        <h3>Job Costing & Construction</h3>
+        <p>Project profitability tracking via QBO Projects, subcontractor payment tracking, and construction-specific job costing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-inner">
+    <div class="section-tag">Past Work</div>
+    <h2 class="section-title">Selected Projects</h2>
+    <p class="section-subtitle">Real engagements, real results. Every number below is backed by documented work.</p>
+    <div class="projects-grid">
+
+      <div class="project-card featured">
+        <div class="project-meta">
+          <span class="tag">Tax Compliance</span>
+          <span class="tag">BRAC</span>
+          <span class="tag">NBR Portal</span>
+          <span class="tag">Excel Automation</span>
+        </div>
+        <h3>Mass Income Tax Filing - BRAC Employee Returns</h3>
+        <p>Managed end-to-end income tax preparation and e-Return submission for over 500 BRAC employees at Mahfel Huq & Co. Chartered Accountants, Dhaka. Built an Excel-based computation pipeline for income, rebates, and documentation in full compliance with the Income Tax Ordinance 1984. Coordinated with senior CAs for review and final approval before every batch submission through the NBR portal.</p>
+        <div class="project-results">
+          <div class="pr-item"><span class="pr-num">500+</span><span class="pr-label">Returns Prepared</span></div>
+          <div class="pr-item"><span class="pr-num">400+</span><span class="pr-label">e-Returns Submitted</span></div>
+          <div class="pr-item"><span class="pr-num">0</span><span class="pr-label">Filing Errors</span></div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-meta">
+          <span class="tag">QuickBooks Online</span>
+          <span class="tag">E-Commerce</span>
+          <span class="tag">Shopify</span>
+        </div>
+        <h3>QuickBooks Cleanup & Monthly Books - US Online Retailer</h3>
+        <p>Cleaned 18 months of miscategorized transactions, reconciled 3 bank accounts and 2 Stripe accounts, and set up automated Shopify integration. Delivered CPA-ready books within 10 business days of project start.</p>
+        <div class="project-results">
+          <div class="pr-item"><span class="pr-num">18</span><span class="pr-label">Months Cleaned</span></div>
+          <div class="pr-item"><span class="pr-num">3</span><span class="pr-label">Accounts Reconciled</span></div>
+          <div class="pr-item"><span class="pr-num">10</span><span class="pr-label">Day Turnaround</span></div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-meta">
+          <span class="tag">Real Estate</span>
+          <span class="tag">P&L Reporting</span>
+          <span class="tag">Monthly Retainer</span>
+        </div>
+        <h3>Ongoing Bookkeeping - Real Estate Property Management</h3>
+        <p>Monthly bookkeeping for a 14-unit property management firm. Handles rent rolls, maintenance expense tracking, property-level P&L, and quarterly cash flow statements. Running 12+ month engagement.</p>
+        <div class="project-results">
+          <div class="pr-item"><span class="pr-num">14</span><span class="pr-label">Units Tracked</span></div>
+          <div class="pr-item"><span class="pr-num">12+</span><span class="pr-label">Months Running</span></div>
+          <div class="pr-item"><span class="pr-num">100%</span><span class="pr-label">On-Time Reports</span></div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-meta">
+          <span class="tag">Construction</span>
+          <span class="tag">Job Costing</span>
+          <span class="tag">QBO Projects</span>
+        </div>
+        <h3>Job Costing & Subcontractor Tracking - Construction Firm</h3>
+        <p>Implemented project-level job costing in QBO Projects for a mid-size construction company. Set up subcontractor payment tracking, COGS reporting per project, and monthly profitability dashboards for the owner.</p>
+        <div class="project-results">
+          <div class="pr-item"><span class="pr-num">8</span><span class="pr-label">Active Projects</span></div>
+          <div class="pr-item"><span class="pr-num">22%</span><span class="pr-label">Cost Visibility Gained</span></div>
+          <div class="pr-item"><span class="pr-num">5</span><span class="pr-label">Day Delivery</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" style="background:var(--navy2)">
+  <div class="section-inner">
+    <div class="section-tag">Client Feedback</div>
+    <h2 class="section-title">What Clients Say</h2>
+    <p class="section-subtitle">Relationships built on accuracy, responsiveness, and books that actually make sense.</p>
+    <div class="reviews-grid">
+
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Nazmus cleaned up 18 months of chaos in under two weeks. Our books finally make sense and our CPA actually thanked us at tax time. Will be renewing monthly without hesitation."</p>
+        <div class="review-author">
+          <div class="review-avatar">AT</div>
+          <div>
+            <div class="ra-name">Alex Thompson</div>
+            <div class="ra-title">CEO, ThreadCraft US · E-Commerce</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"I was drowning in property-level reconciliations. Nazmus set up a clean QBO structure and now I get a property P&L every month that I can actually read. Exactly what I needed."</p>
+        <div class="review-author">
+          <div class="review-avatar">SM</div>
+          <div>
+            <div class="ra-name">Sarah Mitchell</div>
+            <div class="ra-title">Owner, Greenleaf Property Group · Real Estate</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"The job costing setup changed how we bid. We can now see which projects make money and which ones are burning margin. Best accounting decision we've made this year."</p>
+        <div class="review-author">
+          <div class="review-avatar">JP</div>
+          <div>
+            <div class="ra-name">James Parker</div>
+            <div class="ra-title">MD, Parker Construction Ltd · Construction</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Quick, precise, and proactive. Nazmus flagged a duplicate transaction issue I didn't even know existed and corrected it before month-end. That kind of attention is rare."</p>
+        <div class="review-author">
+          <div class="review-avatar">LW</div>
+          <div>
+            <div class="ra-name">Laura Wu</div>
+            <div class="ra-title">Founder, Lumio Digital · SaaS Business</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Handled our three-year catch-up cleanly and had everything audit-ready for our bank. Fast turnaround, zero drama, and great communication throughout the whole process."</p>
+        <div class="review-author">
+          <div class="review-avatar">RK</div>
+          <div>
+            <div class="ra-name">Ravi Kumar</div>
+            <div class="ra-title">Director, Kiran Logistics · Trucking</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Our Stripe and Shopify were a reconciliation nightmare. Nazmus integrated everything into QBO seamlessly and gave us real inventory visibility for the first time. Truly impressive."</p>
+        <div class="review-author">
+          <div class="review-avatar">EF</div>
+          <div>
+            <div class="ra-name">Emma Ford</div>
+            <div class="ra-title">COO, FreshPick Market · Online Retail</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-tag">Career Timeline</div>
+    <h2 class="section-title">Professional Experience</h2>
+    <p class="section-subtitle">Formal institutional training combined with independent client work across multiple sectors.</p>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="tl-period">Oct 2025 – Jan 2026</div>
+        <div class="tl-title">Management Trainee – Tax & VAT and Audit Departments</div>
+        <div class="tl-org">Mahfel Huq & Co. Chartered Accountants, Dhaka</div>
+        <div class="tl-desc">Prepared and reviewed 500+ individual income tax returns for BRAC employees, submitted 400+ e-Returns through the NBR portal with zero errors, and managed large-scale tax data via Excel. Transitioned into the Audit Department, assisting in statutory and internal audits under ICAB guidelines with working knowledge of IAS, IFRS, and ISA standards.</div>
+        <div class="tl-tags">
+          <span class="tag">Tax Compliance</span><span class="tag">NBR e-Return</span>
+          <span class="tag">IFRS / ISA</span><span class="tag">Excel Automation</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-period">Feb 2024 – Dec 2024</div>
+        <div class="tl-title">Accounting Professional</div>
+        <div class="tl-org">Self-Employed / Freelance</div>
+        <div class="tl-desc">Provided bookkeeping, transaction reconciliation, cost analysis, and financial reporting services to clients across multiple industries. Developed and maintained accurate financial records and CPA-ready statements for small and medium businesses.</div>
+        <div class="tl-tags">
+          <span class="tag">QuickBooks Online</span><span class="tag">Financial Reporting</span>
+          <span class="tag">Bank Reconciliation</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-period">Oct 2022 – Feb 2024</div>
+        <div class="tl-title">Bookkeeping Assistant</div>
+        <div class="tl-org">Self-Employed / Freelance</div>
+        <div class="tl-desc">Built custom financial statements and transaction logs for client reporting. Assisted small business owners with cost analysis, budgeting, and financial summaries. Delivered all projects ahead of deadline with strict data privacy standards.</div>
+        <div class="tl-tags">
+          <span class="tag">Bookkeeping</span><span class="tag">Budgeting</span><span class="tag">Data Privacy</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications" style="background:var(--navy2)">
+  <div class="section-inner">
+    <div class="section-tag">Credentials</div>
+    <h2 class="section-title">Education & Certifications</h2>
+    <p class="section-subtitle">Formal qualifications backed by active professional development.</p>
+    <div class="certs-grid" style="margin-top:2.5rem">
+      <div class="cert-card">
+        <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+        <div>
+          <div class="cert-title">QuickBooks Online Certified ProAdvisor</div>
+          <div class="cert-org">Intuit</div>
+          <div class="cert-date">Issued: January 2024</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon"><i class="fas fa-award"></i></div>
+        <div>
+          <div class="cert-title">ICMAB Business Level (BL-400-2024)</div>
+          <div class="cert-org">Institute of Cost and Management Accountants of Bangladesh</div>
+          <div class="cert-date">Issued: October 2022 · License No. BL-400-2024</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon"><i class="fas fa-graduation-cap"></i></div>
+        <div>
+          <div class="cert-title">MBA – Major in Accounting</div>
+          <div class="cert-org">Govt. Brajalal College · National University, Bangladesh</div>
+          <div class="cert-date">2022 (Held 2025) · CGPA 2.78/4.00</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon"><i class="fas fa-university"></i></div>
+        <div>
+          <div class="cert-title">BBS – Bachelor of Business Studies</div>
+          <div class="cert-org">Azam Khan Govt. Commerce College · National University</div>
+          <div class="cert-date">2018 (Held 2020) · CGPA 2.82/4.00</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon"><i class="fas fa-book-open"></i></div>
+        <div>
+          <div class="cert-title">Bookkeeping & Payroll Management Training</div>
+          <div class="cert-org">ICMAB – 4-Day Intensive Program</div>
+          <div class="cert-date">Professional Development</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section id="tools">
+  <div class="section-inner">
+    <div class="section-tag">Tech Stack</div>
+    <h2 class="section-title">Tools & Software</h2>
+    <p class="section-subtitle">Every tool below is used in active client work, not just listed for optics.</p>
+    <div class="tools-grid">
+      <div class="tool-badge"><i class="fas fa-check"></i> QuickBooks Online</div>
+      <div class="tool-badge"><i class="fas fa-check"></i> QuickBooks Desktop</div>
+      <div class="tool-badge"><i class="fas fa-check"></i> Xero</div>
+      <div class="tool-badge"><i class="fas fa-check"></i> Microsoft Excel</div>
+      <div class="tool-badge"><i class="fas fa-check"></i> Google Sheets</div>
+      <div class="tool-badge"><i class="fas fa-check"></i> Hubdoc</div>
+      <div class="tool-badge"><i class="fas fa-check"></i> Dext</div>
+      <div class="tool-badge"><i class="fas fa-check"></i> Bill.com</div>
+      <div class="tool-badge"><i class="fas fa-check"></i> Gusto</div>
+      <div class="tool-badge"><i class="fas fa-check"></i> ADP</div>
+      <div class="tool-badge"><i class="fas fa-check"></i> Stripe</div>
+      <div class="tool-badge"><i class="fas fa-check"></i> PayPal</div>
+      <div class="tool-badge"><i class="fas fa-check"></i> Shopify</div>
+      <div class="tool-badge"><i class="fas fa-check"></i> Amazon Seller Central</div>
+      <div class="tool-badge"><i class="fas fa-check"></i> WooCommerce</div>
+      <div class="tool-badge"><i class="fas fa-check"></i> Wave Accounting</div>
+      <div class="tool-badge"><i class="fas fa-check"></i> FreshBooks</div>
+      <div class="tool-badge"><i class="fas fa-check"></i> Adobe Photoshop</div>
+      <div class="tool-badge"><i class="fas fa-check"></i> Microsoft PowerPoint</div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section id="industries">
+  <div class="section-inner">
+    <div class="section-tag">Who's a good fit</div>
+    <h2 class="section-title">Industries Served</h2>
+    <p class="section-subtitle">Deep experience across sectors means no onboarding curve, just results from day one.</p>
+    <div class="industries-wrap">
+      <div class="industry-item"><i class="fas fa-shopping-bag"></i> E-Commerce & Online Retail</div>
+      <div class="industry-item"><i class="fas fa-building"></i> Real Estate & Property Management</div>
+      <div class="industry-item"><i class="fas fa-hard-hat"></i> Construction & Contracting</div>
+      <div class="industry-item"><i class="fas fa-utensils"></i> Restaurants & Food Service</div>
+      <div class="industry-item"><i class="fas fa-heartbeat"></i> Healthcare & Medical Clinics</div>
+      <div class="industry-item"><i class="fas fa-gavel"></i> Law Firms & Legal Services</div>
+      <div class="industry-item"><i class="fas fa-hand-holding-heart"></i> Non-Profit Organizations</div>
+      <div class="industry-item"><i class="fas fa-store"></i> Retail & Manufacturing</div>
+      <div class="industry-item"><i class="fas fa-truck"></i> Trucking & Logistics</div>
+      <div class="industry-item"><i class="fas fa-laptop"></i> Online Businesses & Creators</div>
+      <div class="industry-item"><i class="fas fa-briefcase"></i> Consulting & Professional Services</div>
+      <div class="industry-item"><i class="fas fa-seedling"></i> Startups & Independent Contractors</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-tag">Let's Work Together</div>
+    <h2 class="section-title">Get in Touch</h2>
+    <p class="section-subtitle">Available full-time, 30+ hours per week, across all time zones. Monthly books delivered within 5 business days, always.</p>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-info">
+          <a href="mailto:nazmussakibgalib@gmail.com" class="ci-item">
+            <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+            <div><div class="ci-label">Email</div><div class="ci-value">nazmussakibgalib@gmail.com</div></div>
+          </a>
+          <a href="tel:+8801700833827" class="ci-item">
+            <div class="ci-icon"><i class="fas fa-phone"></i></div>
+            <div><div class="ci-label">Phone</div><div class="ci-value">+880 1700-833827</div></div>
+          </a>
+          <a href="https://www.upwork.com/freelancers/~012aebfac2c912d4a7" target="_blank" class="ci-item">
+            <div class="ci-icon"><i class="fab fa-upwork"></i></div>
+            <div><div class="ci-label">Upwork</div><div class="ci-value">View Full Profile</div></div>
+          </a>
+          <div class="ci-item" style="cursor:default">
+            <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div><div class="ci-label">Location</div><div class="ci-value">Khulna, Bangladesh · Worldwide Remote</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-note">
+        <h3>Ready to clean up your books?</h3>
+        <p>Whether starting fresh with QuickBooks setup, clearing years of backlog, or needing a reliable monthly bookkeeper — the process is simple: share the scope, agree on timeline, and books are delivered accurately, on time, every time. Strict confidentiality on all financial records, guaranteed.</p>
+        <a href="https://www.upwork.com/freelancers/~012aebfac2c912d4a7" target="_blank" class="upwork-btn"><i class="fas fa-external-link-alt"></i> Hire on Upwork</a>
+        <a href="mailto:nazmussakibgalib@gmail.com" class="email-btn"><i class="fas fa-envelope"></i> Send Email</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <span>Nazmus Sakib</span> · QuickBooks ProAdvisor · ICMAB Professional · All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
